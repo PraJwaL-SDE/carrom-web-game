@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Code Unminifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .output {
+            width: 100%;
+            white-space: pre-wrap;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>jQuery Code Unminifier</h2>
+    <textarea id="minifiedCode" placeholder="Paste your minified jQuery/JavaScript code here..."></textarea>
+    <button id="unminifyButton">Unminify</button>
+    <h3>Uncompressed Code:</h3>
+    <pre id="output" class="output"></pre>
+</div>
+
+<script>
+    // Unminify code on button click using jQuery
+    $(document).ready(function() {
+        $('#unminifyButton').click(function() {
+            var minifiedCode = $('#minifiedCode').val();
+            try {
+                var uncompressedCode = js_beautify(minifiedCode);
+                $('#output').text(uncompressedCode);
+            } catch (error) {
+                $('#output').text('Error formatting code!');
+            }
+        });
+    });
+
+    // js-beautify function for unminifying code
+    function js_beautify(js_code) {
+        return js_code
+            .replace(/([;,{}])/g, '$1\n') // Add line breaks after semicolons, curly braces, etc.
+            .replace(/([^\n])(function|var|if|else|for|while|return)/g, '$1\n$2') // Break before control flow keywords
+            .replace(/\n\s*\n/g, '\n') // Remove excessive newlines
+            .replace(/\s+/g, ' ') // Reduce multiple spaces to one
+            .replace(/^\s+|\s+$/g, ''); // Trim leading/trailing whitespace
+    }
+</script>
+
+</body>
+</html>

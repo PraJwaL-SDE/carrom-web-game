@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Carrom</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/overlay.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/canvasFunc.js"></script>
+	<script type="text/javascript" src="js/canvasCalls.js"></script>
+	<script type="text/javascript" src="js/coinFunc.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body style="background-image:url(back5.jpg)">
+<div class="question-box">Which fundamental right provide freedom to express yourself?</div>
+<div class="row" style="margin: 0px;padding: 0px;">
+	<div class="col-md-3">
+        <div class="jumbotron">
+        	<h3><b>Player 1</b></h3>
+        	<p><b>Score : <span id="0">0</span></b></p>
+			<h3><b>Player 2</b></h3>
+        	<p><b>Score : <span id="1">0</span></b></p>
+        </div>
+		<button class="btn btn-primary" type="button" id="Reset">Reset</button>
+  		<div class="range range-primary">
+            <input type="range" name="range" min="10" max="70" value="35" id="Ranger">
+        </div>
+	</div>
+  	<div class="col-md-6">
+  		<canvas id="Carrom" width="720" height="720">Your browser does not support the HTML5 canvas tag.</canvas>
+  		<canvas id="Striker" width="720" height="720">Your browser does not support the HTML5 canvas tag.</canvas>
+	</div>
+  	<div class="col-md-3">  		
+  		<p id="mp">Mouse Positions :</p>
+  	</div>
+</div>
+
+<!-- New overlapping div with 5 rows -->
+<div id="overlay-div">
+	<div class="coint-info-title">Coin Tips</div>
+	<div class="icon-row row-1">
+		<div class="coin">
+			<div class="inner-coin"></div>
+		</div>
+		<div class="title">Speech</div>
+	</div>
+	<div class="icon-row row-2">
+		<div class="coin">
+			<div class="inner-coin"></div>
+		</div>
+		<div class="title">Equality</div>
+	</div>
+	<div class="icon-row row-3">
+		<div class="coin">
+			<div class="inner-coin"></div>
+		</div>
+		<div class="title">Assembly</div>
+	</div>
+	<div class="icon-row row-4">
+		<div class="coin">
+			<div class="inner-coin"></div>
+		</div>
+		<div class="title">Expliotation</div>
+	</div>
+	<div class="icon-row row-5">
+		<div class="coin">
+			<div class="inner-coin"></div>
+		</div>
+		<div class="title">Religion</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	canvasCalls();
+	initializePlayers(2);
+</script>
+</body>
+</html>

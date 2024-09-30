@@ -1,0 +1,111 @@
+#overlay-div {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    right: 10px;
+    width: 400px;
+    height: 400px;
+    background-color: #FEE0B3;
+    z-index: 999;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.icon-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensure items are aligned to the left */
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Elevated shadow */
+}
+
+/* Outer and inner circles (coins) */
+.coin {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Make outer div circular */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    margin-right: 20px; /* Add some space between the coin and title */
+}
+
+.inner-coin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Make inner div circular */
+    background-color: white;
+    border: 1px solid rgb(255, 255, 255);
+}
+.coint-info-title{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.icon-row .title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Specific colors for each row and outer coin */
+.row-1 {
+    background-color: #9165EF;
+}
+.row-1 .coin {
+    background-color: #9165EF;
+    
+}
+
+.row-2 {
+    background-color: #EFC065;
+}
+.row-2 .coin {
+    background-color: #EFC065;
+}
+
+.row-3 {
+    background-color: #EF9665;
+}
+.row-3 .coin {
+    background-color: #EF9665;
+}
+
+.row-4 {
+    background-color: #A0745B;
+}
+.row-4 .coin {
+    background-color: #A0745B;
+}
+
+.row-5 {
+    background-color: #E9D676;
+}
+.row-5 .coin {
+    background-color: #E9D676;
+}
+
+.question-box {
+    position: absolute; /* Or 'fixed' if you want it to stay on top when scrolling */
+    top: 0; /* Align it at the top of the page */
+    right: 0; /* Center horizontally */
+     /* Translate left by 50% of its own width for perfect centering */
+    background-color: #98C8F7; /* Box background color */
+    width: 400px;
+	height: 80px;
+	font-weight: 700;
+	font-size: 17px;
+    padding: 10px; /* Padding inside the box */
+    z-index: 1000; /* Ensure it's on top of other content */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for an elevated effect */
+    border-radius: 10px; 
+	margin: 10px;
+	/* Optional: Rounded corners */
+}
